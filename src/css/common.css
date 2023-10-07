@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: o;
+    padding: 0;
 }
 
 body {
@@ -10,3 +12,49 @@ body {
     color:rgb(21, 34, 153);
     line-height: 1.5;
 }
+
+.search-form {
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(21, 89, 121);
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+ }
+
+.info {
+    display: flex
+ }
+
+.info-item {
+    padding: 8px;
+ }
+
+.photo-card {
+    display: inline-block;
+    margin: 5px;
+    width: calc(33.33% - 10px);
+    position: relative;
+}
+
+.gallery {
+    text-align: center;
+    display: flex;
+  flex-wrap: wrap;
+  gap: 15px 10px;
+  width: 1190px;
+  margin-top: 20px;
+}
+
+.load-more {
+    display: flex;
+    justify-content: center;
+}
+
