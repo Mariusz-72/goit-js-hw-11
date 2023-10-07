@@ -9,6 +9,7 @@
     box-sizing: border-box;
     margin: o;
     padding: 0;
+    text-decoration: none;
 }
 
 body {
@@ -64,13 +65,15 @@ img {
 
 
 .info {
+    grid-row: 2;
     display: flex;
     justify-content: space-around;
     font-size: 10px;
     color: black;
     text-decoration: none;
-    margin-top: 5px;
+    margin-top: 10px;
  }
+
 
 .info-item {
     display: flex;
@@ -78,15 +81,18 @@ img {
     align-items: center;
     justify-content: space-around;
     padding: 4px;
+    text-align: left;
  }
 
+
+
 .photo-card {
-    display: inline-block;
+  display: inline-block;
     margin: 0px;
     background-color: rgb(146, 205, 233);
     width: calc(24% - 10px);
     height: 300px;
-   
+   position: relative;
      box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
   transition: transform var(--animation-duration) var(--timing-function);
@@ -97,8 +103,9 @@ img {
 }
 
 .photo-card__image {
-  height: 100%;
-  width: 100%;
+    grid-row:1;
+  height: 80%;
+  
   object-fit: cover;
 }
 
@@ -127,6 +134,7 @@ img {
 .load-more {
     height: 50px;
     width: 120px;
+    margin: 15px;
     font-size: 18px;
     font-weight: 700;
     background-color: chocolate;

@@ -42,15 +42,15 @@ async function fetchImages(query, page) {
 
         const images = data.hits.map((image) => `
         <a href = "${image.largeImageURL}" class="photo-card" target="_blank" >
-    <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
+    <img class="photo-card__image" src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
         <div class="info">
-            <p class="info-item"><b>Likes</b>: ${image.likes}
+            <p class="info-item"><b>Likes</b> ${image.likes}
             </p>
-            <p class="info-item"><b>Views</b>: ${image.views}
+            <p class="info-item"><b>Views</b> ${image.views}
             </p>
-            <p class="info-item"><b>Comments</b>: ${image.comments}
+            <p class="info-item"><b>Comments</b> ${image.comments}
             </p>
-            <p class="info-item"><b>Downloads</b>: ${image.downloads}
+            <p class="info-item"><b>Downloads</b> ${image.downloads}
             </p>
         </div>
         </a>
