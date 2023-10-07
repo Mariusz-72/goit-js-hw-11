@@ -1,6 +1,6 @@
 :root {
     --timing-function: cubic-bezier(0.4, 0, 0.25, 1);
-    --animation-duration: 200ms;
+    --animation-duration: 400ms;
 }
 
 
@@ -16,7 +16,7 @@ body {
     -webkit-font-smooting: antialiased;
     -moz-osx-font-smooting: grayscale;
     background-color: rgb(74, 140, 179);
-    color:rgb(21, 34, 153);
+    color:rgb(16, 16, 17);
     line-height: 1.5;
     display: flex;
     flex-direction: column;
@@ -64,27 +64,64 @@ img {
 
 
 .info {
-    display: flex
+    display: flex;
+    justify-content: space-around;
+    font-size: 10px;
+    color: black;
+    text-decoration: none;
+    margin-top: 5px;
  }
 
 .info-item {
-    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4px;
  }
 
 .photo-card {
     display: inline-block;
-    margin: 5px;
-    width: calc(33.33% - 10px);
-    position: relative;
+    margin: 0px;
+    background-color: rgb(146, 205, 233);
+    width: calc(24% - 10px);
+    height: 300px;
+   
+     box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  transition: transform var(--animation-duration) var(--timing-function);
 }
 
+.photo-card:hover {
+  transform: scale(1.03);
+}
+
+.photo-card__image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.photo-card__link {
+  display: block;
+  text-decoration: none;
+  height: 180px;
+  width: 290px;
+}
+
+.photo-card__link:hover {
+  cursor: zoom-in;
+}
+
+
 .gallery {
-    text-align: center;
-    display: flex;
+  display: flex;
   flex-wrap: wrap;
-  gap: 15px 10px;
-  width: 1190px;
-  margin-top: 20px;
+  justify-content: space-between;
+    text-align: center;
+    gap: 15px 10px;
+    width: 1190px;
+    margin-top: 20px;
 }
 
 .load-more {
@@ -100,3 +137,4 @@ img {
 .load-more:focus {
     cursor: pointer;
 }
+

@@ -27,7 +27,7 @@ searchForm.addEventListener('submit', async (event) => {
 });
 
 async function fetchImages(query, page) {
-    const perPage = 10;
+    const perPage = 40;
     const url = `https://pixabay.com/api/?key=${apiKey}&q=${query}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=${perPage}`;
  
     try {
