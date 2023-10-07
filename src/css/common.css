@@ -1,3 +1,10 @@
+:root {
+    --timing-function: cubic-bezier(0.4, 0, 0.25, 1);
+    --animation-duration: 200ms;
+}
+
+
+
 * {
     box-sizing: border-box;
     margin: o;
@@ -11,7 +18,15 @@ body {
     background-color: rgb(74, 140, 179);
     color:rgb(21, 34, 153);
     line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+img {
+    display: block;
+    max-width: 100%;
+ }
 
 .search-form {
     width: 100vw;
@@ -23,11 +38,30 @@ body {
     background-color: rgb(21, 89, 121);
 }
 
+.search-form input {
+    width: 340px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
 
-img {
-    display: block;
-    max-width: 100%;
- }
+.search-form button {
+    height: 35px;
+    width: 35px;
+    border: none;
+    background-color: darkgray;
+
+}
+
+.search-form button:hover,
+.search-form button:focus {
+    cursor: pointer;
+}
+
+
 
 .info {
     display: flex
@@ -54,7 +88,15 @@ img {
 }
 
 .load-more {
-    display: flex;
-    justify-content: center;
+    height: 50px;
+    width: 120px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: chocolate;
+    border-radius: 4px;
 }
 
+.load-more:hover,
+.load-more:focus {
+    cursor: pointer;
+}

@@ -22,8 +22,8 @@ searchForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     gallery.innerHTML = '';
     page = 1;
-    searchQuery = event.target.elements.searchQuery.value;
-    fetchImages(searchQuery, page);
+    searchQuestion = event.target.elements.searchQuery.value;
+    fetchImages(searchQuestion, page);
 });
 
 async function fetchImages(query, page) {
@@ -41,7 +41,7 @@ async function fetchImages(query, page) {
         }
 
         const images = data.hits.map((image) => `
-        <a href = "${image.largeImageURL}" class="photo-card" target="_blanc" >
+        <a href = "${image.largeImageURL}" class="photo-card" target="_blank" >
     <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
         <div class="info">
             <p class="info-item"><b>Likes</b>: ${image.likes}
