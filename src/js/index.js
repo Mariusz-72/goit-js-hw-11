@@ -62,7 +62,7 @@ const images = data.hits.map((image) => `
             buttonLoadMore.style.display = 'none';                                    //jęsli to ostatnia strona obrazków  - ukrycie przycisku load more
             Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
         } else {
-            buttonLoadMore.style.display = 'block';                                     // ...a jeśłi nie to pokazanie tego przycisku
+            buttonLoadMore.style.display = 'block';                                     // ...a jeśli nie to pokazanie tego przycisku
         }
     } catch (error) {
         Notiflix.Notify.failure("Oops! Something went wrong. Please try again.");          // obsługa błędu
