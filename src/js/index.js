@@ -1,11 +1,11 @@
 'use strict';
 import Notiflix from 'notiflix';                                    //import bibliotek i styli
 import 'notiflix/dist/notiflix-3.2.6.min.css';
-import axios from 'axios';
+
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const apiKey = '39862890-65ac2b6f59b7905db114a6f69';                         // klucz API do serwisu pixabay
+import { fetchImages } from './api';
 
 const searchForm = document.querySelector('#search-form');            // wybór elementów z html'a
 const gallery = document.querySelector('.gallery');
