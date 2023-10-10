@@ -17,7 +17,7 @@ async function fetchImages(query, page, buttonLoadMore, perPage) {              
         
         return data;                                                          //zwrot danych do index.js
 
-    } catch (error) {
+    } catch (error) {                                                         // obsługa błędu
         Notiflix.Notify.failure('Oops! Something went wrong. Please try again.');
         return null;
     }
