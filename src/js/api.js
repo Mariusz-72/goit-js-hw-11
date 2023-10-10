@@ -21,6 +21,7 @@ async function fetchImages(query, page, buttonLoadMore, perPage) {              
         Notiflix.Notify.failure('Oops! Something went wrong. Please try again.');
         return null;
     }
-}    
+}
+
 
 export { fetchImages };
