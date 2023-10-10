@@ -21,19 +21,16 @@ searchForm.addEventListener('submit', async (event) => {    //nasłuch na submit
     page = 1;
     searchQuestion = event.target.elements.searchQuery.value;              //pobranie zapytania 
     loadImages(searchQuestion, page, buttonLoadMore);
-    //fetchImages(searchQuestion, page);                            // uruchomienie funkcji do pobrania obrazków z pixabay
 });
 
-async function loadImages(query, page, buttonLoadMore) {
-    const perPage = 40;
-        const data = await fetchImages(query, page, buttonLoadMore, perPage);
-
-        if (data=== null) {
-            
+async function loadImages(query, page, buttonLoadMore) {                    // funkcja ładowania obrazków
+    const perPage = 40;                                                      // ilość na stronie
+    const data = await fetchImages(query, page, buttonLoadMore, perPage);    // wywołanie fuunkcji fetchImages do pobrania danych obrazków
+        if (data=== null) {                                                  // jeśli brak wyników to funkcja jest przerywana 
             return;
         }
-
-        const images = data.hits.map((image) => `                                           
+//przetwarzanie danych zwróconych przez fechImage (dane wstawiane są do html)
+    const images = data.hits.map((image) => `                                           
         <a href = "${image.largeImageURL}" class="photo-card" target="_blank" >
         <img class="photo-card__image" src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
         <div class="info">
@@ -47,18 +44,15 @@ async function loadImages(query, page, buttonLoadMore) {
             </p>
         </div>
         </a>
-    `);
+        `);
         
-
-
         //przygotowanie kodu html dla obrazków i ich danych
-
     
-        gallery.insertAdjacentHTML('beforeend', images.join(''));               //dodanie do kontenera obrazków
+        gallery.insertAdjacentHTML('beforeend', images.join(''));          //dodanie do kontenera obrazków na końcu , jako kolejne
         lightbox.refresh();                                                               // odświeżenie działania lightbox'a
     
         if (data.totalHits <= page * perPage) {
-            buttonLoadMore.style.display = 'none';                                    //jęsli to ostatnia strona obrazków  - ukrycie przycisku load more
+            buttonLoadMore.style.display = 'none';                                       //jęsli to ostatnia strona obrazków  - ukrycie przycisku load more
             Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
         } else {
             buttonLoadMore.style.display = 'block';                                     // ...a jeśli nie to pokazanie tego przycisku
@@ -68,6 +62,6 @@ async function loadImages(query, page, buttonLoadMore) {
 
 buttonLoadMore.addEventListener('click', () => {                          //nasłuch na 'load more'
     page++;
-    fetchImages(searchQuestion, page);                                       //wywołanie funkcji pobrania kiolejnej strony
+    loadImages(searchQuestion, page, buttonLoadMore);                              //wywołanie funkcji pobrania kolejnej strony
 });
 
