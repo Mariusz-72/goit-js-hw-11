@@ -3,7 +3,7 @@ import Notiflix from 'notiflix';                                    //import bib
 import 'notiflix/dist/notiflix-3.2.6.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import { fetchImages } from './api';
+import  fetchImages  from './api';
 
 const searchForm = document.querySelector('#search-form');            // wybór elementów z html'a
 const gallery = document.querySelector('.gallery');

@@ -24,4 +24,4 @@ async function fetchImages(query, page, buttonLoadMore, perPage) {              
 }
 
 
-export { fetchImages };
+export default  fetchImages ;
