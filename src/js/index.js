@@ -1,6 +1,7 @@
 'use strict';
 import Notiflix from 'notiflix';                                    //import bibliotek i styli
 import 'notiflix/dist/notiflix-3.2.6.min.css';
+
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import  fetchImages  from './api';
